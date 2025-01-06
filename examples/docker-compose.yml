@@ -10,6 +10,6 @@ services:
       - ICECAST_ADMIN_PASSWORD=galaxy
       - ICECAST_PASSWORD=galaxy
       - ICECAST_RELAY_PASSWORD=galaxy
-      - ICECAST_HOSTNAME=your_hostname_here
+      - ICECAST_HOSTNAME=galaxy-mn11.onrender.com
     ports:
       - "0.0.0.0:8000:8000"
