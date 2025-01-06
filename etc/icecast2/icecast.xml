@@ -1,6 +1,6 @@
 <icecast>
     <limits>
-        <clients>100</clients>
+        <clients>1000</clients>
         <sources>42</sources>
         <threadpool>5</threadpool>
         <queue-size>524288</queue-size>
@@ -22,7 +22,7 @@
         <admin-password>galaxy</admin-password>
     </authentication>
 
-    <hostname>your_hostname_here</hostname>
+    <hostname>galaxy-mn11.onrender.com</hostname>
 
     <listen-socket>
         <port>8000</port>
