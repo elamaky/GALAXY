@@ -12,18 +12,13 @@
     </limits>
 
     <authentication>
-        <!-- Sources log in with username 'source' -->
         <source-password>galaxy</source-password>
-        <!-- Relays log in username 'relay' -->
         <relay-password>galaxy</relay-password>
-
-        <!-- Admin logs in with the username given below -->
-        <admin-user>galaxy</admin-user>
+        <admin-user>admin</admin-user>
         <admin-password>galaxy</admin-password>
     </authentication>
 
-    <!-- Added admin contact and location information -->
-    <admin>angeldobric@gmail.com</admin>
+    <admin>your-email@example.com</admin>
     <location>https://galaxy-mn11.onrender.com</location>
 
     <hostname>galaxy-mn11.onrender.com</hostname>
@@ -33,56 +28,23 @@
         <bind-address>0.0.0.0</bind-address>
     </listen-socket>
 
-    <!-- Mountpoint configuration -->
+    <!-- Mountpoint za AAC codec -->
     <mount>
-        <mount-name>/live</mount-name>
+        <mount-name>/aac</mount-name>
         <username>source</username>
         <password>galaxy</password>
-        <max-listeners>100</max-listeners>
-        <dump-file>/tmp/dump-example1.ogg</dump-file>
-        <burst-size>65536</burst-size>
-        <fallback-mount>/fallback</fallback-mount>
-        <fallback-override>1</fallback-override>
-        <fallback-when-full>1</fallback-when-full>
-        <intro>/example_intro.ogg</intro>
-        <hidden>1</hidden>
-        <no-yp>1</no-yp>
-        <authentication type="htpasswd">
-            <option name="filename" value="myauth"/>
-            <option name="allow_duplicate_users" value="0"/>
-        </authentication>
-        <on-connect>/home/icecast/bin/stream-start</on-connect>
-        <on-disconnect>/home/icecast/bin/stream-stop</on-disconnect>
+        <bitrate>256</bitrate> <!-- Bitrate u kbps -->
+        <encoder>aac</encoder> <!-- Kodek AAC -->
     </mount>
 
-    <!-- Additional mountpoint example -->
+    <!-- Mountpoint za MP3 codec -->
     <mount>
-        <mount-name>/auth_example.ogg</mount-name>
-        <authentication type="url">
-            <option name="mount_add" value="http://myauthserver.net/notify_mount.php"/>
-            <option name="mount_remove" value="http://myauthserver.net/notify_mount.php"/>
-            <option name="listener_add" value="http://myauthserver.net/notify_listener.php"/>
-            <option name="listener_remove" value="http://myauthserver.net/notify_listener.php"/>
-        </authentication>
+        <mount-name>/mp3</mount-name>
+        <username>source</username>
+        <password>galaxy</password>
+        <bitrate>256</bitrate> <!-- Bitrate u kbps -->
+        <encoder>mp3</encoder> <!-- Kodek MP3 -->
     </mount>
-
-    <!-- Mountpoint za AAC codec -->
-<mount>
-    <mount-name>/aac</mount-name>
-    <username>source</username>
-    <password>galaxy</password>
-    <bitrate>256</bitrate> <!-- Bitrate u kbps -->
-    <encoder>aac</encoder> <!-- Kodek AAC -->
-</mount>
-
-<!-- Mountpoint za MP3 codec -->
-<mount>
-    <mount-name>/mp3</mount-name>
-    <username>source</username>
-    <password>galaxy</password>
-    <bitrate>256</bitrate> <!-- Bitrate u kbps -->
-    <encoder>mp3</encoder> <!-- Kodek MP3 -->
-</mount>
 
     <fileserve>1</fileserve>
 
@@ -96,7 +58,7 @@
 
     <logging>
         <accesslog>access.log</accesslog>
-        <errorlog>error.log</error.log>
+        <errorlog>error.log</errorlog> <!-- Ispravljena oznaka -->
         <loglevel>3</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
         <logsize>10000</logsize> <!-- Max size of a logfile -->
     </logging>
