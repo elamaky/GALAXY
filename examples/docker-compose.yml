@@ -13,3 +13,5 @@ services:
       - ICECAST_HOSTNAME=galaxy-mn11.onrender.com
     ports:
       - "0.0.0.0:8000:8000"
+volumes:
+  logs:
