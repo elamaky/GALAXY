@@ -30,7 +30,7 @@
 
     <!-- Mountpoint za AAC codec -->
     <mount>
-        <mount-name>/aac</mount-name>
+        <mount-name>/stream</mount-name>
         <username>source</username>
         <password>galaxy</password>
         <bitrate>256</bitrate> <!-- Bitrate u kbps -->
@@ -39,7 +39,7 @@
 
     <!-- Mountpoint za MP3 codec -->
     <mount>
-        <mount-name>/mp3</mount-name>
+        <mount-name>/stream</mount-name>
         <username>source</username>
         <password>galaxy</password>
         <bitrate>256</bitrate> <!-- Bitrate u kbps -->
