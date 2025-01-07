@@ -20,14 +20,14 @@ RUN apt-get -qq -y update && \
     sed -i 's/ -d//' /etc/cron-apt/action.d/3-download || true
 
 # Kopiramo start.sh skriptu i osiguravamo da je izvršna
-COPY start.sh /start.sh
+COPY scripts/start.sh /start.sh
 RUN chmod 755 /start.sh
 
 # Postavljanje korisnika icecast2 kao default korisnika za pokretanje naredbi
 USER icecast2
 
 # Kopiramo prilagođeni icecast.xml u odgovarajući direktorijum
-COPY icecast.xml /etc/icecast2/icecast.xml
+COPY etc/icecast2/icecast.xml /etc/icecast2/icecast.xml
 
 # Definišemo ulaznu tačku i port
 CMD ["/start.sh"]
