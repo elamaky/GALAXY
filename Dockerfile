@@ -22,7 +22,7 @@ RUN apt-get -qq -y update && \
 
 # Kopiramo start.sh skriptu i konfiguracioni fajl
 COPY start.sh /start.sh
-COPY config/icecast.xml /etc/icecast2/icecast.xml
+COPY etc/icecast.xml /etc/icecast2/icecast.xml
 
 RUN chmod +x /start.sh
 
