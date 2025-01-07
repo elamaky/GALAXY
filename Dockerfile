@@ -3,7 +3,6 @@ FROM debian:stable-slim
 MAINTAINER Manfred Touron "m@42.am"
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV ICECAST_HOSTNAME galaxy-mn11.onrender.com
 
 RUN apt-get -qq -y update && \
     apt-get -qq -y full-upgrade && \
