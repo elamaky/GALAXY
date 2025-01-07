@@ -14,3 +14,5 @@ services:
         value: galaxy
       - key: ICECAST_RELAY_PASSWORD
         value: galaxy
+      - key: ICECAST_PASSWORD
+        value: galaxy
