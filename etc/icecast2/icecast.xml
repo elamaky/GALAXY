@@ -18,7 +18,7 @@
         <admin-password>galaxy</admin-password>
     </authentication>
 
-    <admin>your-email@example.com</admin>
+    <admin>angeldobric@gmail.com</admin>
     <location>https://galaxy-mn11.onrender.com</location>
 
     <hostname>https://galaxy-mn11.onrender.com</hostname>
