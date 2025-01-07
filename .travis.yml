@@ -1,5 +1,10 @@
-install:
-  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
-
-script:
-  - ./run 'docker build -t moul/icecast . && docker run moul/icecast echo Build succeed'
+services:
+  - type: web
+    name: galaxy-mn11
+    env: docker
+    plan: free
+    branch: master
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: ICECAST_HOSTNAME
+        value: galaxy-mn11.onrender.com
