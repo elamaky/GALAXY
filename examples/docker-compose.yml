@@ -1,7 +1,9 @@
 version: '3'
 services:
   icecast:
-    image: moul/icecast:latest
+    build:
+      context: ..
+      dockerfile: Dockerfile
     volumes:
       - logs:/var/log/icecast2
       - /etc/localtime:/etc/localtime:ro
