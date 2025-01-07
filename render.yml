@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: galaxy-mn11
+    name: angel
     env: docker
     plan: free
     branch: master
