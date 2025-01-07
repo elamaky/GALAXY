@@ -23,7 +23,8 @@ USER icecast2
 
 # Kopiramo start.sh skriptu i osiguravamo da je izvršna
 COPY start.sh /start.sh
-RUN chmod +x /start.sh
+RUN chmod 755 /start.sh
+
 
 # Kopiramo icecast.xml u odgovarajući direktorijum
 COPY etc/icecast2/icecast.xml /etc/icecast2/icecast.xml
