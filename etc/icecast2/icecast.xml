@@ -21,7 +21,7 @@
     <admin>your-email@example.com</admin>
     <location>https://galaxy-mn11.onrender.com</location>
 
-    <hostname>galaxy-mn11.onrender.com</hostname>
+    <hostname>https://galaxy-mn11.onrender.com</hostname>
 
     <listen-socket>
         <port>8000</port>
