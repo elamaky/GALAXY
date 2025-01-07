@@ -3,6 +3,8 @@ FROM debian:stable-slim
 MAINTAINER Manfred Touron "m@42.am"
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV ICECAST_HOSTNAME=galaxy-mn11.onrender.com
+
 
 # Instalacija potrebnih paketa
 RUN apt-get -qq -y update && \
