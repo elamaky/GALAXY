@@ -20,7 +20,7 @@ RUN apt-get -qq -y update && \
     sed -i 's/ -d//' /etc/cron-apt/action.d/3-download || true
 
 # Kopiramo start.sh skriptu i osiguravamo da je izvršna
-COPY scripts/start.sh /start.sh
+COPY start.sh /start.sh
 RUN chmod 755 /start.sh
 
 # Postavljanje korisnika icecast2 kao default korisnika za pokretanje naredbi
