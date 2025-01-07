@@ -20,10 +20,8 @@ RUN apt-get -qq -y update && \
     chmod 777 /var/log/icecast2/error.log && \
     sed -i 's/ -d//' /etc/cron-apt/action.d/3-download || true
 
-# Kopiramo start.sh skriptu i konfiguracioni fajl
+# Kopiramo start.sh skriptu i osiguravamo da je izvršna
 COPY start.sh /start.sh
-COPY etc/icecast.xml /etc/icecast2/icecast.xml
-
 RUN chmod +x /start.sh
 
 CMD ["/start.sh"]
