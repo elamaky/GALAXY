@@ -24,7 +24,7 @@ COPY start.sh /start.sh
 RUN chmod 755 /start.sh
 
 # Kopiramo prilagođeni icecast.xml u odgovarajući direktorijum
-COPY icecast.xml /etc/icecast2/icecast.xml
+COPY etc/icecast2/icecast.xml /etc/icecast2/icecast.xml
 
 # Postavljanje korisnika icecast2 kao default korisnika za pokretanje naredbi
 USER icecast2
