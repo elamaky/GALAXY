@@ -9,7 +9,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
     environment:
       - ICECAST_SOURCE_PASSWORD=galaxy
-      - ICECAST_angel_PASSWORD=galaxy
+      - ICECAST_ADMIN_PASSWORD=galaxy
       - ICECAST_PASSWORD=galaxy
       - ICECAST_RELAY_PASSWORD=galaxy
       - ICECAST_HOSTNAME=galaxy-mn11.onrender.com
