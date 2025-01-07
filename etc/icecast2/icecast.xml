@@ -14,12 +14,12 @@
     <authentication>
         <source-password>galaxy</source-password>
         <relay-password>galaxy</relay-password>
-        <admin-user>admin</admin-user>
+        <admin-user>angel</admin-user>
         <admin-password>galaxy</admin-password>
     </authentication>
 
     <hostname>https://galaxy-mn11.onrender.com</hostname>
-    <admin>angeldobric@gmail.com</admin>
+    <admin>angel</admin>
     <location>https://galaxy-mn11.onrender.com</location>
 
     <listen-socket>
