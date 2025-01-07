@@ -11,7 +11,6 @@ RUN apt-get -qq -y update && \
     apt-get -y autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    # Kreiramo potrebne direktorijume i fajlove za logove
     mkdir -p /var/log/icecast2 && \
     touch /var/log/icecast2/access.log && \
     touch /var/log/icecast2/error.log && \
@@ -19,6 +18,9 @@ RUN apt-get -qq -y update && \
     chmod 777 /var/log/icecast2/access.log && \
     chmod 777 /var/log/icecast2/error.log && \
     sed -i 's/ -d//' /etc/cron-apt/action.d/3-download || true
+
+# Postavljanje korisnika icecast2 kao default korisnika za pokretanje naredbi
+USER icecast2
 
 # Kopiramo start.sh skriptu i osiguravamo da je izvršna
 COPY start.sh /start.sh
