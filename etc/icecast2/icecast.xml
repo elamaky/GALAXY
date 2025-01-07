@@ -18,23 +18,13 @@
         <admin-password>galaxy</admin-password>
     </authentication>
 
-    <hostname>https://galaxy-mn11.onrender.com</hostname>
-    <admin>angel</admin>
-    <location>https://galaxy-mn11.onrender.com</location>
+    <hostname>galaxy-mn11.onrender.com</hostname>
+    <location>galaxy-mn11.onrender.com</location>
 
     <listen-socket>
         <port>8000</port>
         <bind-address>0.0.0.0</bind-address>
     </listen-socket>
-
-    <!-- Mountpoint za AAC codec -->
-    <mount>
-        <mount-name>/stream</mount-name>
-        <username>source</username>
-        <password>galaxy</password>
-        <bitrate>256</bitrate> <!-- Bitrate u kbps -->
-        <encoder>aac</encoder> <!-- Kodek AAC -->
-    </mount>
 
     <!-- Mountpoint za MP3 codec -->
     <mount>
@@ -57,9 +47,9 @@
 
     <logging>
         <accesslog>access.log</accesslog>
-        <errorlog>error.log</errorlog> <!-- Ispravljena oznaka -->
-        <loglevel>3</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
-        <logsize>10000</logsize> <!-- Max size of a logfile -->
+        <errorlog>error.log</errorlog>
+        <loglevel>3</loglevel>
+        <logsize>10000</logsize>
     </logging>
 
     <security>
