@@ -1,10 +1,27 @@
-#!/bin/bash
+#!/bin/sh
 
-# Ažuriramo konfiguracioni fajl sa odgovarajućim vrednostima
-sed -i "s/<hostname>[^<]*<\/hostname>/<hostname>${ICECAST_HOSTNAME}<\/hostname>/g" /etc/icecast2/icecast.xml
-sed -i "s/<source-password>[^<]*<\/source-password>/<source-password>${ICECAST_SOURCE_PASSWORD}<\/source-password>/g" /etc/icecast2/icecast.xml
-sed -i "s/<relay-password>[^<]*<\/relay-password>/<relay-password>${ICECAST_RELAY_PASSWORD}<\/relay-password>/g" /etc/icecast2/icecast.xml
-sed -i "s/<admin-password>[^<]*<\/admin-password>/<admin-password>${ICECAST_ADMIN_PASSWORD}<\/admin-password>/g" /etc/icecast2/icecast.xml
+env
+
+set -x
+
+set_val() {
+    if [ -n "$2" ]; then
+        echo "set '$2' to '$1'"
+        sed -i "s/<$2>[^<]*<\/$2>/<$2>$1<\/$2>/g" /etc/icecast2/icecast.xml
+    else
+        echo "Setting for '$1' is missing, skipping." >&2
+    fi
+}
+
+set_val $ICECAST_SOURCE_PASSWORD source-galaxy
+set_val $ICECAST_RELAY_PASSWORD  relay-galaxy
+set_val $ICECAST_ADMIN_PASSWORD  admin-galaxy
+set_val $ICECAST_PASSWORD        galaxy
+set_val $ICECAST_HOSTNAME        https://galaxy-mn11.onrender.com
+
+set -e
+
+sudo -Eu icecast2 icecast2 -n -c /etc/icecast2/icecast.xml
 
 # Pokrećemo Icecast server
 exec sudo -Eu icecast2 icecast2 -n -c /etc/icecast2/icecast.xml
