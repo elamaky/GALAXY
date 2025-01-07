@@ -24,6 +24,9 @@ RUN apt-get -qq -y update && \
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
+# Kopiramo icecast.xml u odgovarajući direktorijum
+COPY etc/icecast2/icecast.xml /etc/icecast2/icecast.xml
+
 CMD ["/start.sh"]
 EXPOSE 8000
 VOLUME ["/config", "/var/log/icecast2", "/etc/icecast2"]
