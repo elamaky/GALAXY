@@ -18,10 +18,9 @@
         <admin-password>galaxy</admin-password>
     </authentication>
 
+    <hostname>https://galaxy-mn11.onrender.com</hostname>
     <admin>angeldobric@gmail.com</admin>
     <location>https://galaxy-mn11.onrender.com</location>
-
-    <hostname>https://galaxy-mn11.onrender.com</hostname>
 
     <listen-socket>
         <port>8000</port>
@@ -30,7 +29,7 @@
 
     <!-- Mountpoint za AAC codec -->
     <mount>
-        <mount-name>/stream</mount-name>
+        <mount-name>/aac</mount-name>
         <username>source</username>
         <password>galaxy</password>
         <bitrate>256</bitrate> <!-- Bitrate u kbps -->
@@ -39,7 +38,7 @@
 
     <!-- Mountpoint za MP3 codec -->
     <mount>
-        <mount-name>/stream</mount-name>
+        <mount-name>/mp3</mount-name>
         <username>source</username>
         <password>galaxy</password>
         <bitrate>256</bitrate> <!-- Bitrate u kbps -->
