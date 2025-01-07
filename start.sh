@@ -18,17 +18,15 @@ set_val() {
 }
 
 # Postavljanje vrednosti za Icecast konfiguraciju
-set_val "$ICECAST_SOURCE_PASSWORD" source-password
-set_val "$ICECAST_RELAY_PASSWORD" relay-password
-set_val "$ICECAST_ADMIN_PASSWORD" admin-password
-set_val "$ICECAST_PASSWORD" password
-set_val "$ICECAST_HOSTNAME" hostname
+set_val "galaxy" source-password
+set_val "galaxy" relay-password
+set_val "angel" admin-password
+set_val "galaxy" password
+set_val "noise.example.com" hostname
 
 # Zaustavljanje skripte u slučaju greške
 set -e
 
 # Pokretanje Icecast servera sa sudo i icecast2 korisnikom
-sudo -Eu icecast2 icecast2 -n -c /etc/icecast2/icecast.xml
-
-# Pokrećemo Icecast server
 exec sudo -Eu icecast2 icecast2 -n -c /etc/icecast2/icecast.xml
+
