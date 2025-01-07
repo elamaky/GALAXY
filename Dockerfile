@@ -2,8 +2,9 @@ FROM debian:stable-slim
 
 MAINTAINER Manfred Touron "m@42.am"
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
+# Instalacija potrebnih paketa
 RUN apt-get -qq -y update && \
     apt-get -qq -y full-upgrade && \
     apt-get -qq -y install --no-install-recommends icecast2 python3-setuptools sudo && \
@@ -25,10 +26,12 @@ USER icecast2
 COPY start.sh /start.sh
 RUN chmod 755 /start.sh
 
-
-# Kopiramo icecast.xml u odgovarajući direktorijum
+# Kopiramo prilagođeni icecast.xml u odgovarajući direktorijum
 COPY etc/icecast2/icecast.xml /etc/icecast2/icecast.xml
 
+# Definišemo ulaznu tačku i port
 CMD ["/start.sh"]
 EXPOSE 8000
+
+# Volumes za konfiguraciju i logove
 VOLUME ["/config", "/var/log/icecast2", "/etc/icecast2"]
