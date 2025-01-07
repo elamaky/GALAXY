@@ -19,12 +19,11 @@ RUN apt-get -qq -y update && \
     chmod 777 /var/log/icecast2/error.log && \
     sed -i 's/ -d//' /etc/cron-apt/action.d/3-download || true
 
-# Postavljanje korisnika icecast2 kao default korisnika za pokretanje naredbi
-USER icecast2
-
 # Kopiramo start.sh skriptu i osiguravamo da je izvršna
-COPY start.sh /start.sh
+# Postavljanje korisnika icecast2 kao default korisnika za pokretanje naredbi
+USER root
 RUN chmod 755 /start.sh
+USER icecast2
 
 # Kopiramo prilagođeni icecast.xml u odgovarajući direktorijum
 COPY etc/icecast2/icecast.xml /etc/icecast2/icecast.xml
