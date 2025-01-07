@@ -8,3 +8,9 @@ services:
     envVars:
       - key: ICECAST_HOSTNAME
         value: galaxy-mn11.onrender.com
+      - key: ICECAST_SOURCE_PASSWORD
+        value: galaxy
+      - key: ICECAST_ADMIN_PASSWORD
+        value: galaxy
+      - key: ICECAST_RELAY_PASSWORD
+        value: galaxy
