@@ -3,9 +3,11 @@
 <xsl:template match = "/icestats" >
 <html>
 <head>
-<title>Icecast Streaming Media Server</title>
-<link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Icecast Streaming Media Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="/style.css" />
 </head>
+
 <body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
 <h2>Icecast2 Admin</h2>
 <br />
