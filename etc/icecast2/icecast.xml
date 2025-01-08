@@ -34,11 +34,21 @@
         <mount-name>/stream</mount-name>
         <username>source</username>
         <password>galaxy</password>
-        <bitrate>256</bitrate> <!-- Bitrate u kbps -->
+        <bitrate>128</bitrate> <!-- Bitrate u kbps -->
         <encoder>mp3</encoder> <!-- Kodek MP3 -->
     </mount>
 
-    <fileserve>1</fileserve>
+<mount>
+    <!-- AAC Stream -->
+    <mount-name>/stream_aac</mount-name>
+    <username>source</username>
+    <password>galaxy</password>
+    <bitrate>128</bitrate> <!-- Bitrate u kbps -->
+    <encoder>aac</encoder> <!-- AAC Kodek -->
+</mount>
+
+    
+ <fileserve>1</fileserve>
 
     <paths>
         <basedir>/usr/share/icecast2</basedir>
