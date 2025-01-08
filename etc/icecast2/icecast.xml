@@ -1,4 +1,10 @@
 <icecast>
+
+    <hostname>galaxy-mn11.onrender.com</hostname>
+   <location>Germany</location>
+<admin>angeldobric@gmail.com</admin>
+    
+    
     <limits>
         <clients>10</clients>
         <sources>42</sources>
@@ -18,11 +24,7 @@
         <admin-password>galaxy</admin-password>
     </authentication>
 
-    <hostname>galaxy-mn11.onrender.com</hostname>
-   <location>Germany</location>
-
-
-    <listen-socket>
+     <listen-socket>
         <port>8000</port>
         <bind-address>0.0.0.0</bind-address>
     </listen-socket>
